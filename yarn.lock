@@ -665,10 +665,6 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bdwain-redux-loop@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/bdwain-redux-loop/-/bdwain-redux-loop-2.2.5.tgz#39ada296b17b879c02531b7ebb85bad2eb51891e"
-
 benchmark@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/benchmark/-/benchmark-1.0.0.tgz#2f1e2fa4c359f11122aa183082218e957e390c73"
@@ -1269,7 +1265,7 @@ entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
-enzyme@^2.3.0:
+enzyme@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-2.5.1.tgz#d7c8e2352c04c27fcf2523fb17bc7e0569352743"
   dependencies:
@@ -2096,7 +2092,7 @@ jasmine-core@^2.4.1, jasmine-core@~2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.5.2.tgz#6f61bd79061e27f43e6f9355e44b3c6cab6ff297"
 
-jasmine-expect-jsx@^1.0.3, jasmine-expect-jsx@^1.1.1:
+jasmine-expect-jsx@^1.1.1, jasmine-expect-jsx@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/jasmine-expect-jsx/-/jasmine-expect-jsx-1.1.2.tgz#1898a578b7a4d84c381ae43a5f37812beeb7f0d6"
   dependencies:
@@ -3083,11 +3079,7 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-redux-thunk@^2.0.1:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.1.0.tgz#c724bfee75dbe352da2e3ba9bc14302badd89a98"
-
-redux@^3.5.2:
+redux@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
   dependencies:
