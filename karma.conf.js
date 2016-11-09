@@ -23,8 +23,7 @@ module.exports = config => {
 
     preprocessors: {
       'src/**/*.js': ['babel', 'webpack', 'sourcemap'],
-      'src/**/!(*-spec).js': ['coverage'],
-      'src/main.js': ['coverage', 'babel', 'webpack', 'sourcemap']
+      'src/**/!(*-spec).js': ['coverage']
     },
 
     coverageReporter: {
