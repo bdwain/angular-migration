@@ -14,13 +14,13 @@ module.exports = {
     loaders: [
       {
         test: /.js?$/,
-        loaders: ['react-hot', 'babel-loader'],
+        loaders: ['react-hot', 'babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       },
       {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]",
-      },
+        loader: "file?name=[name].[ext]"
+      }
     ]
   },
   plugins: [

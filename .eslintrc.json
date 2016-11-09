@@ -1,0 +1,68 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jasmine": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "15.0"
+      }
+    },
+    "rules": {
+      "camelcase": "error",
+      "comma-style": ["error", "last"],
+      "curly": ["error", "all"],
+      "dot-notation": "error",
+      "eqeqeq": "error",
+      "guard-for-in": "error",
+      "indent": ["error", 2,
+        {
+          "SwitchCase": 1,
+          "VariableDeclarator": {
+            "const": 3,
+            "let": 2
+          }
+        }
+      ],
+      "jsx-quotes": ["error", "prefer-double"],
+      "linebreak-style": ["error", "unix"],
+      "no-bitwise": "error",
+      "no-console": "off",
+      "no-extra-parens": "error",
+      "no-iterator": "error",
+      "no-loop-func": "error",
+      "no-multi-spaces": "error",
+      "no-multi-str": "error",
+      "no-sequences": "error",
+      "no-shadow": "error",
+      "no-var": "error",
+      "no-with": "error",
+      "quotes": ["error", "single"],
+      "react/jsx-boolean-value": ["error", "never"],
+      "react/jsx-key": "error",
+      "react/jsx-no-duplicate-props": "error",
+      "react/jsx-space-before-closing": "error",
+      "react/no-string-refs": "error",
+      "react/prefer-es6-class": ["error", "always"],
+      "react/prefer-stateless-function": "error",
+      "react/prop-types": "off",
+      "react/require-render-return": "error",
+      "react/self-closing-comp": "error",
+      "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
+      "strict": "error",
+      "wrap-iife": ["error", "inside"]
+    }
+}

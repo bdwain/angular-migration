@@ -1,9 +1,8 @@
 import {combineReducers} from 'redux';
+import page from './page/page-reducer.js';
 
 const reducer = combineReducers({
-  foo: function(state = null, action){
-    return state;
-  }
+  page
 });
 
 export default reducer;
