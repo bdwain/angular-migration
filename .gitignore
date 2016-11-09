@@ -23,4 +23,4 @@ app/app.manifest
 toggles.json
 .tags*
 app/scss/backstreet.scss
-
+coverage
