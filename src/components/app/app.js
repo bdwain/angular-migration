@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Router, browserHistory } from 'react-router';
-import Page from './page/page.js';
+import Page from '../page/page.js';
 
 const App = function(){
   return (

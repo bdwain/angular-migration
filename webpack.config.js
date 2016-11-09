@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    javascript: './app/main.js',
-    html: './index.html'
+    javascript: './src/main.js',
+    html: './src/index.html'
   },
   output: { 
     path: 'dist/',
