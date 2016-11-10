@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Page from './page.js';
 
-//import 'jasmine-expect-jsx';
+import 'jasmine-expect-jsx/index.js';
 
 describe('Page', function(){
   it('returns a div', function(){

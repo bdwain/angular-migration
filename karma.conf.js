@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = config => {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -7,7 +5,7 @@ module.exports = config => {
 
     // files available to the browser via karma's HTTP server
     files: [
-      'src/**/*-spec.js',
+      'test-index.js'
     ],
 
     plugins: [
@@ -22,8 +20,8 @@ module.exports = config => {
     ],
 
     preprocessors: {
-      'src/**/*.js': ['babel', 'webpack', 'sourcemap'],
-      'src/**/!(*-spec).js': ['coverage']
+      'test-index.js': ['babel', 'sourcemap', 'webpack'],
+      'src/components/**/!(*-spec).js': ['coverage']
     },
 
     coverageReporter: {
@@ -38,7 +36,7 @@ module.exports = config => {
           branches: 100,
           functions: 100,
           lines: 100,
-          includes: ['src/**/*.js']
+          includes: ['src/components/**/*.js']
         }
       },
       watermarks: {
