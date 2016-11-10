@@ -2,36 +2,27 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: {},
-  output: {
-    path: 'dist/',
+  entry: {
+    javascript: './src/main.js',
+    html: './src/index.html'
+  },
+  output: { 
+    path: './dist/',
     filename: 'bundle.js'
   },
   module: {
-    preLoaders: [
+    loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loaders: ['react-hot', 'babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       },
       {
-        test: /\.js$/,
-        exclude: [/node_modules/, /spec\.js$/],
-        loader: 'isparta'
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]"
       }
     ]
   },
-  isparta: {
-    embedSource: true,
-    noAutoWrap: true
-  },
-  externals: {
-    cheerio: 'window',
-    'react/addons': true,
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true
-  },
-  devtool: 'inline-source-map',
   plugins: [
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'

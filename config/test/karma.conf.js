@@ -21,14 +21,13 @@ module.exports = config => {
 
     preprocessors: {
       'test-index.js': ['babel', 'sourcemap', 'webpack'],
-      'src/components/**/!(*-spec).js': ['coverage']
+      '../../src/components/**/!(*-spec).js': ['coverage']
     },
 
     coverageReporter: {
+      dir: '../../coverage',
       reporters: [
-        { type: 'html', subdir: 'report-html' },
-        { type: 'text', subdir: '.', file: 'report.txt' },
-        { type: 'text-summary', subdir: '.', file: 'summary.txt' }
+        { type: 'html', subdir: '.' },
       ],
       check: {
         global: {
@@ -36,7 +35,7 @@ module.exports = config => {
           branches: 100,
           functions: 100,
           lines: 100,
-          includes: ['src/components/**/*.js']
+          includes: ['../../src/components/**/*.js']
         }
       },
       watermarks: {
