@@ -4,11 +4,11 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.config.js --progress --colors --hot --inline --host 0.0.0.0 --port 6001",
+    "start": "webpack-dev-server --config ./config/dev.webpack.config.js --progress --colors --hot --inline --port 5100",
     "eslint": "eslint ./src && echo 'eslint OK'",
     "test": "yarn run eslint && yarn run unit-test",
     "unit-test": "karma start ./config/test/karma.conf.js --single-run --browsers PhantomJS",
-    "debug": "sambac --webpackConfig ./config/test/tests.individual.webpack.js"
+    "debug": "sambac --webpackConfig ./config/test/tests.individual.webpack.js --webpackPort 5102"
   },
   "repository": {
     "type": "git",

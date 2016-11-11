@@ -4049,8 +4049,8 @@ rx-lite@^3.1.2:
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
 sambac-webpack@^0.3.0:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/sambac-webpack/-/sambac-webpack-0.3.2.tgz#078ddda6d263c440276a4555e9cf9b6dd05543a5"
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/sambac-webpack/-/sambac-webpack-0.3.3.tgz#64dfcb7408a69cfaac22f7b3792dc135f5333e12"
   dependencies:
     commander "^2.9.0"
     express "^4.13.3"

@@ -35,13 +35,13 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
-     new webpack.SourceMapDevToolPlugin( {
-        filename: '[name].bundle.js.map',
-        include: './src/components/**/*.js'
-     } ),
-     new WebpackJasmineHtmlRunnerPlugin( {
-        includePaths: ['./node_modules/jasmine-expect-jsx/dist/jasmine-expect-jsx.js'],
-        fixupScripts: ['fixup-stacktraces', 'fixup-json-messages']
-     } )
+    new webpack.SourceMapDevToolPlugin( {
+      filename: '[name].bundle.js.map',
+      include: './src/components/**/*.js'
+    }),
+    new WebpackJasmineHtmlRunnerPlugin( {
+      includePaths: ['./node_modules/jasmine-expect-jsx/dist/jasmine-expect-jsx.js'],
+      fixupScripts: ['fixup-stacktraces', 'fixup-json-messages']
+    })
   ]
 };
