@@ -6,8 +6,7 @@ module.exports = {
     javascript: './src/main.js',
     html: './src/index.html'
   },
-  output: { 
-    path: './dist/',
+  output: { //dir doesn't matter because it's all in memory
     filename: 'bundle.js'
   },
   module: {

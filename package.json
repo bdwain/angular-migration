@@ -5,10 +5,12 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config ./config/dev.webpack.config.js --progress --colors --hot --inline --port 5100",
-    "eslint": "eslint ./src && echo 'eslint OK'",
-    "test": "yarn run eslint && yarn run unit-test",
-    "unit-test": "karma start ./config/test/karma.conf.js --single-run --browsers PhantomJS",
-    "debug": "sambac --webpackConfig ./config/test/tests.individual.webpack.js --webpackPort 5102"
+    "build": "webpack --config ./config/prod.webpack.config.js",
+    "prod-test": "yarn build && node prod-test-server.js",
+    "eslint": "eslint ./src",
+    "test": "karma start ./config/test/karma.conf.js --single-run --browsers PhantomJS",
+    "verify": "yarn eslint && yarn test",
+    "test-debug": "sambac --webpackConfig ./config/test/tests.individual.webpack.js --port 5102 --webpackPort 5103"
   },
   "repository": {
     "type": "git",
@@ -50,6 +52,7 @@
     "karma-jasmine-expect-jsx": "^1.0.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-webpack": "^1.8.0",
+    "morgan": "^1.7.0",
     "node-sass": "^3.4.2",
     "phantomjs-prebuilt": "^2.1.13",
     "react-addons-test-utils": "^15.0.1",
