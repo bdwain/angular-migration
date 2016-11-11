@@ -6,8 +6,8 @@ const WebpackJasmineHtmlRunnerPlugin = require('webpack-jasmine-html-runner-plug
 module.exports = {
   entry: WebpackJasmineHtmlRunnerPlugin.entry('./src/components/**/*-spec.js'),
   output: {
-   path: './spec-output',
-   publicPath: '/test/',
+   path: '/',
+   publicPath: '/',
    filename: '[name].bundle.js'
   },
   module: {
