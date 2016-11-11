@@ -24,3 +24,4 @@ toggles.json
 .tags*
 app/scss/backstreet.scss
 coverage
+spec-output
