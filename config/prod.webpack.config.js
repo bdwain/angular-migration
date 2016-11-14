@@ -2,8 +2,7 @@ let webpack = require('webpack');
 
 let config = {
   entry: {
-    app: './src/main.js',
-    html: './src/index.html'
+    app:[ './src/main.js'],
   },
   output: { 
     path: './dist/',

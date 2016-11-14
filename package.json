@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config ./config/dev.webpack.config.js --progress --colors --hot --inline --port 5100",
-    "build": "webpack --config ./config/prod.webpack.config.js",
-    "prod-test": "yarn build && node prod-test-server.js",
+    "build": "cp ./src/index.html ./dist/ && webpack --config ./config/prod.webpack.config.js",
+    "clear": "rm -rf dist/",
+    "prod-test": "yarn clear && mkdir dist/ && yarn build && node prod-test-server.js",
     "eslint": "eslint ./src",
     "test": "karma start ./config/test/karma.conf.js --single-run --browsers PhantomJS",
     "verify": "yarn eslint && yarn test",

@@ -2,8 +2,7 @@ var webpack = require('webpack');
 
 let config = {
   entry: {
-    app: './src/main.js',
-    html: './src/index.html'
+    app:[ './src/main.js', './src/index.html'],
   },
   output: { //dir doesn't matter because it's all in memory
     filename: '[name].js'
