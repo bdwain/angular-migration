@@ -1,13 +1,12 @@
-var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
+let config = {
   entry: {
-    javascript: './src/main.js',
+    app: './src/main.js',
     html: './src/index.html'
   },
   output: { //dir doesn't matter because it's all in memory
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -32,9 +31,13 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
-    new webpack.SourceMapDevToolPlugin( {
+    new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
       include: './src/components/**/*.js'
     })
   ]
 };
+
+require('./apply-css-config')(config);
+
+module.exports = config;

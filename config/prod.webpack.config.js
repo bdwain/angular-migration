@@ -1,14 +1,13 @@
-var path = require('path');
-var webpack = require('webpack');
+let webpack = require('webpack');
 
-module.exports = {
+let config = {
   entry: {
-    javascript: './src/main.js',
+    app: './src/main.js',
     html: './src/index.html'
   },
   output: { 
     path: './dist/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -34,3 +33,7 @@ module.exports = {
     })
   ]
 };
+
+require('./apply-css-config.js')(config, true);
+
+module.exports = config;

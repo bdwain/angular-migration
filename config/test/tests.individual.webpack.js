@@ -1,9 +1,7 @@
-const path = require('path');
 const webpack = require('webpack');
 const WebpackJasmineHtmlRunnerPlugin = require('webpack-jasmine-html-runner-plugin');
 
-//relative to main dir
-module.exports = {
+let config = {
   entry: WebpackJasmineHtmlRunnerPlugin.entry('./src/components/**/*-spec.js'),
   output: {
    path: '/',
@@ -17,7 +15,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       }
-    ]
+    ],
+    loaders: []
   },
   externals: {
     cheerio: 'window',
@@ -45,3 +44,7 @@ module.exports = {
     })
   ]
 };
+
+require('../apply-css-config')(config);
+
+module.exports = config;

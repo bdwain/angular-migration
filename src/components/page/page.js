@@ -1,10 +1,12 @@
 import React from 'react';
 import SubComponent from './subcomponent/subcomponent.js';
 
+import './page.scss';
+
 function Page(){
   return (
     <div>
-      <div>Page</div>
+      <div className="pagediv">Page</div>
       <SubComponent content="hello" />
     </div>
   );

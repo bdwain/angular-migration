@@ -1,7 +1,6 @@
-var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
+let config = {
   entry: {},
   output: {
     path: '../../dist/',
@@ -19,7 +18,8 @@ module.exports = {
         exclude: [/node_modules/, /spec\.js$/],
         loader: 'isparta'
       }
-    ]
+    ],
+    loaders: []
   },
   isparta: {
     embedSource: true,
@@ -43,3 +43,7 @@ module.exports = {
     })
   ]
 };
+
+require('../apply-css-config')(config);
+
+module.exports = config;
