@@ -29,6 +29,13 @@ let config = {
       'process.env': {
         NODE_ENV: '"production"'
       },
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      sourceMap: false,
+      comments: false
     })
   ]
 };
