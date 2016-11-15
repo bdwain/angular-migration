@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./config/dev.webpack.config.js --progress --colors --hot --inline --port 5100",
     "build": "([ -d dist ] || mkdir dist) && cp ./src/index.html ./dist/ && webpack --config ./config/prod.webpack.config.js",
-    "build-snapshot" : "yarn clear && yarn build && mv dist/app.js dist/app@$(git rev-parse HEAD).js && mv dist/app.css dist/app@$(git rev-parse HEAD).css && replace 'app' \"app@$(git rev-parse HEAD)\" -- dist/index.html",
-    "build-release" : "yarn clear && yarn build && mv dist/app.js dist/app@$npm_package_version.js && mv dist/app.css dist/app@$npm_package_version.css && replace 'app' \"app@$npm_package_version\" -- dist/index.html",
+    "build-snapshot": "yarn clear && yarn verify && yarn build && mv dist/app.js dist/app@$(git rev-parse HEAD).js && mv dist/app.css dist/app@$(git rev-parse HEAD).css && replace 'app' \"app@$(git rev-parse HEAD)\" -- dist/index.html",
+    "build-release": "yarn clear && yarn verify && yarn build && mv dist/app.js dist/app@$npm_package_version.js && mv dist/app.css dist/app@$npm_package_version.css && replace 'app' \"app@$npm_package_version\" -- dist/index.html",
     "clear": "rm -rf dist/",
     "prod-test": "yarn clear && yarn build && node prod-test-server.js",
     "eslint": "eslint ./src",
