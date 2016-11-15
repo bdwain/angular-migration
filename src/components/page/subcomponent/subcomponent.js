@@ -4,7 +4,7 @@ function SubComponent({content}){
   return <div>{content}</div>;
 }
 
-SubComponent.proptypes = {
+SubComponent.propTypes = {
   content: React.PropTypes.string.isRequired
 };
 
