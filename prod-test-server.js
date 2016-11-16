@@ -7,7 +7,6 @@ app.appName = 'App name';
 app.use(morgan('tiny'));
 app.blanketPath = 'dist/';
 app.use(express.static(app.blanketPath));
-app.use('/dist', express.static('dist/'));
 app.indexPath = './dist/index.html';
 
 app.use((req, res, next) => {

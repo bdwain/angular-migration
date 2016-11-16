@@ -7,6 +7,7 @@ const App = function(){
   return (
     <Router history={ browserHistory }>
       <Route path="/" component={ Page } />
+      <Route path="*">{/*shows nothing*/}</Route>
     </Router>
   );
 };
