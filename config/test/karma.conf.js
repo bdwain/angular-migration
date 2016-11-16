@@ -20,8 +20,7 @@ module.exports = config => {
     ],
 
     preprocessors: {
-      'test-index.js': ['babel', 'sourcemap', 'webpack'],
-      '../../src/components/**/!(*-spec).js': ['coverage']
+      'test-index.js': ['babel', 'sourcemap', 'webpack']
     },
 
     coverageReporter: {

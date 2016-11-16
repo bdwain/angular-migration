@@ -11,20 +11,16 @@ let config = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
-        exclude: [/node_modules/, /spec\.js$/],
-        loader: 'isparta'
+        exclude: /node_modules/,
+        query: {
+          plugins: [
+            ["istanbul", {"include" : "src/**/!(*-spec).js"}]
+          ]
+        }
       }
     ],
     loaders: []
   },
-  isparta: {
-    embedSource: true,
-    noAutoWrap: true
-  },
   externals: {
     cheerio: 'window',
     'react/addons': true,
@@ -38,7 +34,7 @@ let config = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"development"'
+        NODE_ENV: '"test"'
       },
     })
   ]
