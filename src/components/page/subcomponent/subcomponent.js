@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg'; //import component files relatively
-import merlin from 'img/merlin.jpg'; //import global images aboslutely
+import logo from './logo.svg'; //import component images relatively
+import merlin from 'img/merlin.jpg'; //import global images absolutely
 
 function SubComponent({content}){
   return (
