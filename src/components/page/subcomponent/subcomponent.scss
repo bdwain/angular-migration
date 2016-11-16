@@ -1,0 +1,5 @@
+.merlin{
+  //note the ~. that is required for absolute paths (root is src directory) for urls in css
+  //you can do relative paths too './merlin.jpg' or '../../../img/merlin.jpg'
+  background-image: url('~img/merlin.jpg');
+}

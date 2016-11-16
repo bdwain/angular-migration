@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg'; //import component images relatively
-import merlin from 'img/merlin.jpg'; //import global images absolutely
+import logo from './logo.svg'; //could also import absolute path, with src as root, i.e 'img/logo.svg'
+
+import './subcomponent.scss';
 
 function SubComponent({content}){
   return (
@@ -9,9 +10,7 @@ function SubComponent({content}){
       <div>
         <img src={logo} style={{width: '100px', height: '100px'}} />
       </div>
-      <div>
-        <img src={merlin} />
-      </div>
+      <div className="merlin" style={{width: '300px', height: '300px'}} />
     </div>
   );
 }
