@@ -6,8 +6,8 @@ import merlin from 'img/merlin.jpg';
 
 describe('SubComponent', function(){
   it('returns the content', function(){
-    let content = "my content";
-    let expected = (
+    let content = 'my content';
+    let expected =
       <div>
         <div>{content}</div>
         <div>
@@ -16,8 +16,7 @@ describe('SubComponent', function(){
         <div>
           <img src={merlin} />
         </div>
-      </div>
-    );
+      </div>;
     expect(shallow(<SubComponent content={content} />).get(0)).toEqualJSX(expected);
   });
 });

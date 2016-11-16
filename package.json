@@ -12,7 +12,7 @@
     "build-release": "yarn clear && yarn verify && yarn build && mv dist/app.js dist/app@$npm_package_version.js && mv dist/app.css dist/app@$npm_package_version.css && replace 'app' \"app@$npm_package_version\" -- dist/index.html",
     "clear": "rm -rf dist/",
     "prod-test": "yarn clear && yarn build && node prod-test-server.js",
-    "eslint": "eslint ./src",
+    "eslint": "eslint ./src -c ./config/.eslintrc.json",
     "test": "karma start ./config/test/karma.conf.js --single-run --browsers PhantomJS",
     "verify": "yarn eslint && yarn test",
     "test-debug": "sambac --webpackConfig ./config/test/tests.individual.webpack.js --port 5102 --webpackPort 5103"

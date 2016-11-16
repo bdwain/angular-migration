@@ -25,6 +25,9 @@ let config = {
       }
     ]
   },
+  eslint: {
+    configFile: path.join(__dirname, './.eslintrc.json')
+  },
   devtool: '#inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
