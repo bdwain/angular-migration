@@ -29,9 +29,6 @@ let config = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new webpack.ProvidePlugin({
-      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"test"'
@@ -40,6 +37,6 @@ let config = {
   ]
 };
 
-require('../apply-css-config')(config);
+require('../apply-common-config')(config);
 
 module.exports = config;

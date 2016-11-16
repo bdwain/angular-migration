@@ -2,7 +2,7 @@ let webpack = require('webpack');
 
 let config = {
   entry: {
-    app:[ './src/main.js'],
+    app: ['./src/main.js']
   },
   output: { 
     path: './dist/',
@@ -22,9 +22,6 @@ let config = {
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -40,6 +37,6 @@ let config = {
   ]
 };
 
-require('./apply-css-config.js')(config, true);
+require('./apply-common-config.js')(config, true);
 
 module.exports = config;

@@ -1,8 +1,9 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
 let config = {
   entry: {
-    app:[ './src/main.js', './src/index.html'],
+    app: ['./src/main.js', './src/index.html']
   },
   output: { //dir doesn't matter because it's all in memory
     filename: '[name].js'
@@ -22,9 +23,6 @@ let config = {
   },
   devtool: '#inline-source-map',
   plugins: [
-    new webpack.ProvidePlugin({
-      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"development"'
@@ -37,6 +35,6 @@ let config = {
   ]
 };
 
-require('./apply-css-config')(config);
+require('./apply-common-config')(config);
 
 module.exports = config;
