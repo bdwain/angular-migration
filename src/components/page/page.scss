@@ -1,4 +1,6 @@
-@import 'scss/colors.scss'; //can also import relatively, i.e '../../scss/colors.scss'
+//can also import relatively, i.e '../../scss/colors.scss'
+//can also import with a glob. i.e 'scss/**/*.scss'
+@import 'scss/colors.scss';
 
 .pagediv {
   color: $redTruffle;

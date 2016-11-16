@@ -2256,7 +2256,7 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
-glob@^5.0.15:
+glob@^5.0.15, glob@^5.0.5:
   version "5.0.15"
   resolved "https://registry.yarnpkg.com/glob/-/glob-5.0.15.tgz#1bc936b9e02f4a603fcc222ecf7633d30b8b93b1"
   dependencies:
@@ -3506,6 +3506,12 @@ node-pre-gyp@^0.6.29:
     semver "~5.3.0"
     tar "~2.2.1"
     tar-pack "~3.3.0"
+
+node-sass-globbing:
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/node-sass-globbing/-/node-sass-globbing-0.0.23.tgz#bc5b9ae61aa3e36ae36d1d8de56a7c037d2f8e26"
+  dependencies:
+    glob "^5.0.5"
 
 node-sass@^3.4.2:
   version "3.12.2"

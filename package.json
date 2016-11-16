@@ -60,6 +60,7 @@
     "karma-webpack": "^1.8.0",
     "morgan": "^1.7.0",
     "node-sass": "^3.4.2",
+    "node-sass-globbing": "^0.0.23",
     "phantomjs-prebuilt": "^2.1.13",
     "postcss": "^5.2.5",
     "postcss-loader": "^1.1.1",

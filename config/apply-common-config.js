@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const nodeSassGlobbing = require('node-sass-globbing');
 
 function applyCssConfig(config, prod){
   const sassLoaders = [
@@ -17,7 +18,8 @@ function applyCssConfig(config, prod){
 
   config.sassLoader = {
     includePaths: path.resolve(__dirname, '../src'),
-    sourceMap: !prod
+    sourceMap: !prod,
+    importer: nodeSassGlobbing
   };
 
   config.postcss = [
