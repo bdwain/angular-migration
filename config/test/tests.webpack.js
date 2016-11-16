@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
 let config = {
   entry: {},
@@ -10,9 +11,10 @@ let config = {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/,
         query: {
+          extends: path.join(__dirname, '../.babelrc'),
           plugins: [
             ["istanbul", {"include" : "src/**/!(*-spec).js"}]
           ]

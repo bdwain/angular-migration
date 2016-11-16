@@ -1,4 +1,5 @@
-let webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
 let config = {
   entry: {
@@ -12,8 +13,11 @@ let config = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel-loader'],
-        exclude: /node_modules/
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          extends: path.join(__dirname, './.babelrc')
+        }
       },
       {
         test: /\.html$/,

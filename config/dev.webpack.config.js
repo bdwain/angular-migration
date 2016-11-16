@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const babelSettings = {
+  extends: path.join(__dirname, '/.babelrc')
+};
+
 let config = {
   entry: {
     app: ['./src/main.js', './src/index.html']
@@ -12,8 +16,8 @@ let config = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel-loader', 'eslint-loader'],
-        exclude: /node_modules/
+        loaders: ['react-hot', `babel?${JSON.stringify(babelSettings)}`, 'eslint-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /\.html$/,
