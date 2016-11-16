@@ -31,7 +31,9 @@ function applyCssConfig(config, prod){
 module.exports = function(config, prod = false){
   config.module.loaders.push({
     test: /\.(jpe?g|png|gif|svg|ico)$/i,
-    loader: 'file?name=img/[name].[ext]'
+    //this embeds images less than 5kb as base64 in the js
+    //change limit to 1 to not embed anything (or just switch to file loader)
+    loader: 'url?limit=5000&name=img/[name].[ext]'
   });
 
   config.resolve = {
