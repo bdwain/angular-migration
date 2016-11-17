@@ -3,7 +3,7 @@ const WebpackJasmineHtmlRunnerPlugin = require('webpack-jasmine-html-runner-plug
 const path = require('path');
 
 let config = {
-  entry: WebpackJasmineHtmlRunnerPlugin.entry('./src/components/**/*-spec.js'),
+  entry: WebpackJasmineHtmlRunnerPlugin.entry('./src/**/*-spec.js'),
   output: {
    path: '/',
    publicPath: '/',
@@ -37,7 +37,8 @@ let config = {
     }),
     new webpack.SourceMapDevToolPlugin( {
       filename: '[name].bundle.js.map',
-      include: './src/components/**/*.js'
+      include: './src/**/*.js',
+      exclude: './src/*.js'
     }),
     new WebpackJasmineHtmlRunnerPlugin( {
       includePaths: ['./node_modules/jasmine-expect-jsx/dist/jasmine-expect-jsx.js'],

@@ -34,7 +34,8 @@ module.exports = config => {
           branches: 100,
           functions: 100,
           lines: 100,
-          includes: ['../../src/components/**/*.js']
+          includes: ['../../src/**/*.js'],
+          excludes: ['../../src/*.js']
         }
       },
       watermarks: {
