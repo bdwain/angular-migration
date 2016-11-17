@@ -37,7 +37,7 @@ let config = {
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
-      include: './src/components/**/*.js'
+      include: './src/**/*.js'
     })
   ]
 };
