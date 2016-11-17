@@ -4,7 +4,6 @@ const path = require('path');
 let config = {
   entry: {},
   output: {
-    path: '../../dist/',
     filename: 'bundle.js'
   },
   module: {
