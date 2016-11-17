@@ -16,7 +16,7 @@ let config = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', `babel?${JSON.stringify(babelSettings)}`, 'eslint-loader'],
+        loaders: [`babel?${JSON.stringify(babelSettings)}`, 'eslint-loader'],
         exclude: /node_modules/,
       },
       {
