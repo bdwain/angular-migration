@@ -8,7 +8,7 @@ function applyCssConfig(config, prod){
   const sassLoaders = [
     `css-loader${!prod ? '?sourceMap' : ''}`,
     'postcss-loader',
-    'sass-loader'
+    `sass-loader${!prod ? '?sourceMap' : ''}`
   ];
 
   config.module.loaders.push({
