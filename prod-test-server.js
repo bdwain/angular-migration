@@ -1,7 +1,8 @@
 let express = require('express'),
   morgan = require('morgan'),
   app = express(),
-  backstreetProdApp = express();
+  backstreetProdApp = express(),
+  argv = require('yargs').argv;
 
 app.appName = 'App name';
 app.use(morgan('tiny'));
@@ -17,7 +18,12 @@ app.use((req, res, next) => {
   }
 });
 
-let port = 5101;
+if(argv.port && typeof argv.port !== 'number'){
+  console.log('Invalid port');
+  process.exit(1);
+}
+
+let port = argv.port || 8081;
 app.listen(port, () => {
   console.log(`App name ----> running on port ${port}`);
 });
