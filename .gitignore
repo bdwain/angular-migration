@@ -13,7 +13,6 @@ atlassian-ide-plugin.xml
 *.iml
 *.ipr
 *.iws
-app/app.manifest
 .shelf
 .tags*
 coverage
