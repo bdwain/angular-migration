@@ -2,6 +2,18 @@
 //can also import with a glob. i.e 'scss/**/*.scss'
 @import 'scss/colors.scss';
 
+@font-face{
+  font-family: 'graphik-bold';
+  src: url('~fonts/graphik-bold/graphik-bold.eot');
+  src: url('~fonts/graphik-bold/graphik-bold.eot#iefix') format('embedded-opentype'),
+      url('~fonts/graphik-bold/graphik-bold.otf') format('opentype'),
+      url('~fonts/graphik-bold/graphik-bold.woff') format('woff'),
+      url('~fonts/graphik-bold/graphik-bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+}
+
 .pagediv {
+  font-family: 'graphik-bold';
   color: $redTruffle;
 }

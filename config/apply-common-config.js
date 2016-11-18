@@ -38,6 +38,13 @@ module.exports = function(config, prod = false){
     loader: 'url?limit=5000&name=img/[name].[ext]'
   });
 
+  config.module.loaders.push({
+    test: /\.(eot|ttf|woff|otf)$/i,
+    //same thing as the img loader but for fonts
+    loader: 'url?limit=5000&name=fonts/[name].[ext]'
+  });
+
+
   config.resolve = {
     root: path.resolve(__dirname, '../src')
   };
