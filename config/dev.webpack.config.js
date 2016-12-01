@@ -7,7 +7,7 @@ const babelSettings = {
 
 let config = {
   entry: {
-    app: ['./src/main.js', './src/index.html']
+    app: ['babel-polyfill', './src/main.js', './src/index.html']
   },
   output: { //dir doesn't matter because it's all in memory
     filename: '[name].js'

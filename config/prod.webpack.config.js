@@ -3,7 +3,7 @@ const path = require('path');
 
 let config = {
   entry: {
-    app: ['./src/main.js', './src/index.html']
+    app: ['babel-polyfill', './src/main.js', './src/index.html']
   },
   output: { 
     path: './dist/',

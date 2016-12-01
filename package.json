@@ -21,6 +21,7 @@
     "url": "ssh://git@stash.grubhub.com:7999/spike/react-skeleton.git"
   },
   "dependencies": {
+    "babel-polyfill": "^6.16.0",
     "classnames": "^2.2.5",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

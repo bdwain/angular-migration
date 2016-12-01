@@ -41,7 +41,9 @@ let config = {
       exclude: './src/*.js'
     }),
     new WebpackJasmineHtmlRunnerPlugin( {
-      includePaths: ['./node_modules/jasmine-expect-jsx/dist/jasmine-expect-jsx.js'],
+      includePaths: ['./node_modules/jasmine-expect-jsx/dist/jasmine-expect-jsx.js',
+                     './node_modules/babel-polyfill/dist/polyfill.js'
+      ],
       fixupScripts: ['fixup-stacktraces', 'fixup-json-messages']
     })
   ]
