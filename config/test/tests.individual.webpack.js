@@ -42,7 +42,7 @@ let config = {
     }),
     new WebpackJasmineHtmlRunnerPlugin( {
       includePaths: ['./node_modules/jasmine-expect-jsx/dist/jasmine-expect-jsx.js',
-                     './node_modules/babel-polyfill/dist/polyfill.js'
+                     './node_modules/babel-polyfill/dist/polyfill.min.js'
       ],
       fixupScripts: ['fixup-stacktraces', 'fixup-json-messages']
     })

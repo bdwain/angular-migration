@@ -5,7 +5,7 @@ module.exports = config => {
 
     // files available to the browser via karma's HTTP server
     files: [
-      '../../node_modules/babel-polyfill/dist/polyfill.js',
+      '../../node_modules/babel-polyfill/dist/polyfill.min.js',
       'test-index.js'
     ],
 
