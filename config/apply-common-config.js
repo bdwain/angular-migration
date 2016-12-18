@@ -23,7 +23,7 @@ function applyCssConfig(config, prod){
   };
 
   config.postcss = [
-    autoprefixer(require('./postcss.json'))
+    autoprefixer(require('./autoprefixer.json'))
   ];
   
   config.plugins.push(new ExtractTextPlugin('[name].css'));
