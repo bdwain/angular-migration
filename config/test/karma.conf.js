@@ -6,6 +6,7 @@ module.exports = config => {
     // files available to the browser via karma's HTTP server
     files: [
       '../../node_modules/babel-polyfill/dist/polyfill.min.js',
+      '../../node_modules/whatwg-fetch/fetch.js',
       'test-index.js'
     ],
 
@@ -17,11 +18,10 @@ module.exports = config => {
       'karma-webpack',
       'karma-phantomjs-launcher',
       'karma-sourcemap-loader',
-      'karma-babel-preprocessor'
     ],
 
     preprocessors: {
-      'test-index.js': ['babel', 'sourcemap', 'webpack']
+      'test-index.js': ['sourcemap', 'webpack']
     },
 
     coverageReporter: {

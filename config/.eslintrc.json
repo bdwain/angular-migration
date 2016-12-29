@@ -6,19 +6,19 @@
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
+      "ecmaVersion": 2017,
       "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "jsx": true
+        "jsx": true,
+        "impliedStrict": true
       },
       "sourceType": "module"
     },
     "plugins": [
-        "react"
+      "react"
     ],
     "settings": {
       "react": {
-        "pragma": "React",
-        "version": "15.0"
+        "pragma": "React"
       }
     },
     "rules": {

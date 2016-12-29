@@ -10,7 +10,7 @@ let config = {
    filename: '[name].bundle.js'
   },
   module: {
-    preLoaders: [
+    loaders: [
       {
         test: /\.js$/,
         loader: 'babel',
@@ -19,8 +19,7 @@ let config = {
           extends: path.join(__dirname, '../.babelrc')
         }
       }
-    ],
-    loaders: []
+    ]
   },
   externals: {
     cheerio: 'window',

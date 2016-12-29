@@ -3,7 +3,7 @@ const path = require('path');
 
 let config = {
   entry: {
-    app: ['babel-polyfill', './src/main.js', './src/index.html']
+    app: ['./src/main.js', './src/index.html']
   },
   output: { 
     path: './dist/',
@@ -21,7 +21,11 @@ let config = {
       },
       {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]"
+        loaders: [
+          'file-loader?name=[name].[ext]',
+          'extract-loader',
+          'html-loader?' + JSON.stringify({attrs: ['img:src', 'link:href']})
+        ]
       }
     ]
   },

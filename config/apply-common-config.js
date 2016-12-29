@@ -12,13 +12,15 @@ function applyCssConfig(config, prod){
   ];
 
   config.module.loaders.push({
-    test: /\.scss$/,
+    test: /\.(s)?css$/,
     loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
   });
 
   config.sassLoader = {
-    includePaths: path.resolve(__dirname, '../src'),
-    sourceMap: !prod,
+    includePaths: [
+      path.resolve(__dirname, '../src'),
+      path.resolve(__dirname, '../node_modules/')
+    ],
     importer: nodeSassGlobbing
   };
 
@@ -33,9 +35,15 @@ function applyCssConfig(config, prod){
 module.exports = function(config, prod = false){
   config.module.loaders.push({
     test: /\.(jpe?g|png|gif|svg|ico)$/i,
+    exclude: /favicon\.ico$/,
     //this embeds images less than 5kb as base64 in the js
     //change limit to 1 to not embed anything (or just switch to file loader)
     loader: 'url?limit=5000&name=img/[name].[ext]'
+  });
+
+  config.module.loaders.push({
+    test: /favicon\.ico$/i,
+    loader: 'file-loader?name=img/favicon.ico'
   });
 
   config.module.loaders.push({
@@ -48,10 +56,6 @@ module.exports = function(config, prod = false){
   config.resolve = {
     root: path.resolve(__dirname, '../src')
   };
-
-  config.plugins.push(new webpack.ProvidePlugin({
-    fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-  }));
 
   applyCssConfig(config, prod);
 }
