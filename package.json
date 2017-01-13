@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config ./config/dev.webpack.config.js --progress --colors --hot --inline --port 5100 --history-api-fallback --host 0.0.0.0",
+    "start": "webpack-dev-server --config ./config/dev.webpack.config.js --progress --colors --hot --inline --port 5100 --history-api-fallback --host 0.0.0.0 --open",
     "prebuild": "yarn clear && mkdir dist",
-    "build": "webpack --config ./config/prod.webpack.config.js",
+    "build": "webpack --progress --colors --config ./config/prod.webpack.config.js",
     "build-snapshot": "yarn build && mv dist/app.js dist/app@$(git rev-parse HEAD).js && mv dist/app.css dist/app@$(git rev-parse HEAD).css && replace 'app' \"app@$(git rev-parse HEAD)\" -- dist/index.html",
     "build-release": "yarn build && mv dist/app.js dist/app@$npm_package_version.js && mv dist/app.css dist/app@$npm_package_version.css && replace 'app' \"app@$npm_package_version\" -- dist/index.html",
     "clear": "rm -rf dist/",

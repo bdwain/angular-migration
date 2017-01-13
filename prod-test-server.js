@@ -2,7 +2,8 @@ let express = require('express'),
   morgan = require('morgan'),
   app = express(),
   backstreetProdApp = express(),
-  argv = require('yargs').argv;
+  argv = require('yargs').argv,
+  open = require('open');
 
 app.appName = 'App name';
 app.use(morgan('tiny'));
@@ -25,5 +26,6 @@ if(argv.port && typeof argv.port !== 'number'){
 
 let port = argv.port || 8081;
 app.listen(port, () => {
-  console.log(`App name ----> running on port ${port}`);
+  console.log(`${app.appName} ----> running on port ${port}`);
+  open(`http://localhost:${port}`)
 });
