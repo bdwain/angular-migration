@@ -5,56 +5,83 @@ const path = require('path');
 const nodeSassGlobbing = require('node-sass-globbing');
 
 function applyCssConfig(config, prod){
-  const sassLoaders = [
-    `css-loader${!prod ? '?sourceMap' : ''}`,
-    'postcss-loader',
-    `sass-loader${!prod ? '?sourceMap' : ''}`
-  ];
-
-  config.module.loaders.push({
-    test: /\.(s)?css$/,
-    loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+  config.module.rules.push({
+    test: /\.scss$/,
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: [
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMaps: !prod,
+            minimize: prod
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              autoprefixer(require('./autoprefixer.json'))
+            ]
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMaps: !prod,
+            includePaths: [
+              path.resolve(__dirname, '../src')
+            ],
+            importer: nodeSassGlobbing
+          }
+        }
+      ]
+    })
   });
 
-  config.sassLoader = {
-    includePaths: [
-      path.resolve(__dirname, '../src'),
-      path.resolve(__dirname, '../node_modules/')
-    ],
-    importer: nodeSassGlobbing
-  };
-
-  config.postcss = [
-    autoprefixer(require('./autoprefixer.json'))
-  ];
-  
   config.plugins.push(new ExtractTextPlugin('[name].css'));
 }
 
-
 module.exports = function(config, prod = false){
-  config.module.loaders.push({
+  config.module.rules.push({
     test: /\.(jpe?g|png|gif|svg|ico)$/i,
     exclude: /favicon\.ico$/,
     //this embeds images less than 5kb as base64 in the js
     //change limit to 1 to not embed anything (or just switch to file loader)
-    loader: 'url?limit=5000&name=img/[name].[ext]'
+    use: [{
+      loader: 'url-loader',
+      options: {
+        limit: 5000,
+        name: 'img/[name].[ext]'
+      }
+    }]
   });
 
-  config.module.loaders.push({
+  config.module.rules.push({
     test: /favicon\.ico$/i,
-    loader: 'file-loader?name=img/favicon.ico'
+    use: [{
+      loader: 'file-loader',
+      options: {
+        name: 'img/favicon.ico'
+      }
+    }]
   });
 
-  config.module.loaders.push({
+  config.module.rules.push({
     test: /\.(eot|ttf|woff|otf)$/i,
     //same thing as the img loader but for fonts
-    loader: 'url?limit=5000&name=fonts/[name].[ext]'
+    use: [{
+      loader: 'url-loader',
+      options: {
+        limit: 5000,
+        name: 'fonts/[name].[ext]'
+      }
+    }]
   });
 
 
   config.resolve = {
-    root: path.resolve(__dirname, '../src')
+    modules: [path.resolve(__dirname, "../src"), "node_modules"]
   };
 
   applyCssConfig(config, prod);

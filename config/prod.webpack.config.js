@@ -10,21 +10,35 @@ let config = {
     filename: '[name].js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
         exclude: /node_modules/,
-        query: {
-          extends: path.join(__dirname, './.babelrc')
-        }
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            extends: path.join(__dirname, './.babelrc')
+          }
+        }]
       },
       {
         test: /\.html$/,
-        loaders: [
-          'file-loader?name=[name].[ext]',
-          'extract-loader',
-          'html-loader?' + JSON.stringify({attrs: ['img:src', 'link:href']})
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          },
+          {
+            loader: 'extract-loader'
+          },
+          {
+            loader: 'html-loader',
+            options: {
+              attrs: ['img:src', 'link:href']
+            }
+          }
         ]
       }
     ]
@@ -36,9 +50,6 @@ let config = {
       },
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
       sourceMap: false,
       comments: false
     })

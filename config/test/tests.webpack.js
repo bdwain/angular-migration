@@ -2,22 +2,23 @@ const webpack = require('webpack');
 const path = require('path');
 
 let config = {
-  entry: {},
   output: {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
         exclude: /node_modules/,
-        query: {
-          extends: path.join(__dirname, '../.babelrc'),
-          plugins: [
-            ["istanbul", {"include" : "src/**/!(*-spec).js"}]
-          ]
-        }
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            extends: path.join(__dirname, '../.babelrc'),
+            plugins: [
+              ["istanbul", {"include" : "src/**/!(*-spec).js"}]
+            ]
+          }
+        }]
       }
     ]
   },
