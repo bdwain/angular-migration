@@ -1,12 +1,10 @@
 import 'babel-polyfill';
-import 'whatwg-fetch';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import angular from 'angular';
+import AppModule from './components/angular-app/app.js';
 
-import App from './components/app/app.js';
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+angular
+  .element(document)
+  .ready(() => {
+    angular.bootstrap(document, [AppModule.name]);
+  });

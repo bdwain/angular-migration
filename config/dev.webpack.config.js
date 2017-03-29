@@ -21,7 +21,7 @@ let config = {
         }]        
       },
       {
-        test: /\.html$/,
+        test: /index\.html$/,
         use: [
           {
             loader: 'file-loader',
@@ -39,6 +39,16 @@ let config = {
             }
           }
         ]
+      },
+      {
+        test: /\.html$/,
+        exclude: /index.*\.html$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            attrs: ['img:src', 'img:ng-src', 'object:data', 'link:href', 'a:href']
+          }
+        }]
       }
     ]
   },

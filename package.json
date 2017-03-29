@@ -1,5 +1,5 @@
 {
-  "name": "react-skeleton",
+  "name": "angular-react-migrate",
   "version": "0.0.1",
   "description": "",
   "private": true,
@@ -10,7 +10,6 @@
     "build-snapshot": "yarn build && mv dist/app.js dist/app@$(git rev-parse HEAD).js && mv dist/app.css dist/app@$(git rev-parse HEAD).css && replace 'app' \"app@$(git rev-parse HEAD)\" -- dist/index.html",
     "build-release": "yarn build && mv dist/app.js dist/app@$npm_package_version.js && mv dist/app.css dist/app@$npm_package_version.css && replace 'app' \"app@$npm_package_version\" -- dist/index.html",
     "clear": "rm -rf dist/",
-    "prod-test": "yarn build && node prod-test-server.js --port 5101",
     "eslint": "eslint ./src -c ./config/.eslintrc.json",
     "unit-test": "karma start ./config/test/karma.conf.js --single-run --browsers PhantomJS",
     "test": "yarn eslint && yarn unit-test",
@@ -21,6 +20,8 @@
     "url": "ssh://git@stash.grubhub.com:7999/spike/react-skeleton.git"
   },
   "dependencies": {
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0",
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
     "react": "^15.3.2",
