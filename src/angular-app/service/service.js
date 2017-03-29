@@ -1,9 +1,11 @@
 import angular from 'angular';
+import {store} from '../../react-app/store.js';
+import {increment, decrement} from '../../react-app/reducer.js';
 
 class Service {
   constructor($rootScope){
     this.$rootScope = $rootScope;
-    this.count = 0;
+    this.count = store.getState();
   }
 
   broadcast(){
@@ -11,16 +13,16 @@ class Service {
   }
 
   getCount(){
-    return this.count;
+    return store.getState();
   }
 
   increment(){
-    this.count++;
+    store.dispatch(increment());
     this.broadcast();
   }
 
   decrement(){
-    this.count--;
+    store.dispatch(decrement());
     this.broadcast();
   }
 }
