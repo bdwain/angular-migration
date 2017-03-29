@@ -9,14 +9,6 @@ class Controller{
   updateCount(){
     this.count = this.Service.getCount();
   }
-
-  increment(){
-    this.Service.increment();
-  }
-
-  decrement(){
-    this.Service.decrement();
-  }
 }
 
 Controller.$inject = ['$scope', 'Service'];
