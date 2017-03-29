@@ -1,7 +1,7 @@
 import angular from 'angular';
 import 'angular-route';
-import Page1Module from './page1/page1.js';
-import Page2Module from './page2/page2.js';
+import Page1Module from './page1/page1-module.js';
+import Page2Module from './page2/page2-module.js';
 
 let App = angular
   .module('app', ['ngRoute', Page1Module.name, Page2Module.name])

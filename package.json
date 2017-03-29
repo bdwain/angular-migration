@@ -25,6 +25,7 @@
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
+    "ngreact": "^0.4.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^5.0.3",
