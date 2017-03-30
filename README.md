@@ -6,8 +6,9 @@ setup:
 
 `yarn start`
 
-you can use npm too if you prefer.
+you can use npm too if you prefer
 
+there are 3 branches to work from with different tasks that I worked on in the demo.
 
 step 1: Convert the pizza component to react, and use it from the angular page2 component.
 
